@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">EnglishLearning</string>
-
+    <string name="default_web_client_id">213565137892-5m5fkhu7cnq0d92o2rg04s1b8gn8bop7.apps.googleusercontent.com</string>
     <!-- Bottom Navigation Bar Titles -->
     <string name="title_home">Home</string>
     <string name="title_courses">Courses</string>
@@ -15,4 +15,10 @@
     <string name="content_ob2">The smart competitive ones, or those who look for the fun side of everything, will have a great learning experience here. Every step you take, any progress you make, SpeakUp has a reward to encourage your achievement.</string>
     <string name="title_ob3">Take learning beyond the classroom walls</string>
     <string name="content_ob3">Find certified teachers, personalize your own English learning plan.</string>
+
+    <string name="welcome_title">Welcome!</string>
+    <string name="sign_out_label">Sign out</string>
+    <string name="start_label">Start</string>
+
+
 </resources>

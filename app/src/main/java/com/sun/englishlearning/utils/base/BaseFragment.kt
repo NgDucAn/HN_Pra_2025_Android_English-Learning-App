@@ -16,13 +16,13 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
     protected open val isInsets = true
 
-    abstract fun inflateViewBinding(inflater: LayoutInflater, container: ViewGroup?): VB // Thêm container
+    abstract fun inflateViewBinding(inflater: LayoutInflater, container: ViewGroup?): VB 
 
     abstract fun initData()
     abstract fun initView()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        _viewBinding = inflateViewBinding(inflater, container) // Sửa ở đây
+        _viewBinding = inflateViewBinding(inflater, container) 
         return viewBinding.root
     }
 
