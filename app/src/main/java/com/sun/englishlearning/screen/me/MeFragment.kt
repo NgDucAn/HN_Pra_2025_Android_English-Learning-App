@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.credentials.ClearCredentialStateRequest
 import androidx.credentials.CredentialManager
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
@@ -30,9 +31,11 @@ class MeFragment : BaseFragment<FragmentMeBinding>() {
     }
 
     override fun initView() {
-        // Remaining listener for the logout button
-        viewBinding.btnSignOut.setOnClickListener {
-            signOut()
+        // Settings -> navigate to profile screen
+        viewBinding.icSettings.setOnClickListener {
+            findNavController().navigate(
+                com.sun.englishlearning.R.id.action_navigation_me_to_navigation_profile
+            )
         }
     }
 
@@ -46,8 +49,8 @@ class MeFragment : BaseFragment<FragmentMeBinding>() {
         if (user!= null) {
             // User is logged in: display personal information
             viewBinding.layoutUserProfile.visibility = View.VISIBLE
-            viewBinding.tvUserName.text = user.displayName
-            viewBinding.tvUserEmail.text = user.email
+//            viewBinding.tvUserName.text = user.displayName
+//            viewBinding.tvUserEmail.text = user.email
         } else {
             // User is not logged in (rare case on this screen): hide information
             viewBinding.layoutUserProfile.visibility = View.GONE
