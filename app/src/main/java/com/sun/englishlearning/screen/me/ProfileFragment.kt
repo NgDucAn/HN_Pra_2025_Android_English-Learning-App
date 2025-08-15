@@ -101,6 +101,19 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
         )
     }
 
+    override fun onStart() {
+        super.onStart()
+
+        updateUI(auth.currentUser)
+    }
+
+    private fun updateUI(user: FirebaseUser?) {
+        if (user!= null) {
+            viewBinding.tvProfileName.text = user.displayName
+            viewBinding.tvProfileEmail.text = user.email
+        }
+    }
+
     private fun signOut() {
         lifecycleScope.launch {
             auth.signOut()
