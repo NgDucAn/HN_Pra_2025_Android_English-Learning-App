@@ -9,5 +9,7 @@
     <color name="state_success">#05A660</color>
     <color name="state_info">#0063F7</color>
     <color name="success_70">#ECF9EF</color>
-</resources>
+    <color name="gray_dark">#858585</color>
+    <color name="gray_light">#F0F0F0</color>
 
+</resources>
