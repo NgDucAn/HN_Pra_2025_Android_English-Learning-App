@@ -49,23 +49,11 @@ class MeFragment : BaseFragment<FragmentMeBinding>() {
         if (user!= null) {
             // User is logged in: display personal information
             viewBinding.layoutUserProfile.visibility = View.VISIBLE
-//            viewBinding.tvUserName.text = user.displayName
+            viewBinding.tvUser.text = user.displayName
 //            viewBinding.tvUserEmail.text = user.email
         } else {
             // User is not logged in (rare case on this screen): hide information
             viewBinding.layoutUserProfile.visibility = View.GONE
-        }
-    }
-
-    private fun signOut() {
-        lifecycleScope.launch {
-            auth.signOut()
-
-            try {
-                credentialManager.clearCredentialState(ClearCredentialStateRequest())
-            } catch (e: Exception) {
-            }
-            (activity as? MainActivity)?.navigateToLogin()
         }
     }
 }
