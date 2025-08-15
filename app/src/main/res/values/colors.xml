@@ -9,8 +9,13 @@
     <color name="state_success">#05A660</color>
     <color name="state_info">#0063F7</color>
     <color name="success_70">#ECF9EF</color>
+    <color name="gray_dark">#858585</color>
+    <color name="gray_light">#F0F0F0</color>
 
-    <!-- Lesson Screen Colors -->
+    <color name="background_light_blue">#FAFBFF</color>
+    <color name="text_dark_gray">#515960</color>
+    <color name="green_primary">#05A660</color>
+
     <color name="lesson_card_background">#FFFFFFFF</color>
     <color name="lesson_title_text">#FF2D2D2D</color>
     <color name="lesson_subtitle_text">#FF666666</color>
@@ -21,10 +26,9 @@
     <color name="screen_background">#FFF5F5F5</color>
     <color name="lesson_number_icon">#FF666666</color>
     <color name="advanced_star_icon">#FF666666</color>
-
-    <!-- Tab Colors -->
     <color name="tab_text_color">#FF2563EB</color>
     <color name="tab_text_inactive">#FF666666</color>
     <color name="red">#E53535</color>
+
 </resources>
 
