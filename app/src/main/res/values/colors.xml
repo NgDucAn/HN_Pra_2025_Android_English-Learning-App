@@ -11,5 +11,19 @@
     <color name="success_70">#ECF9EF</color>
     <color name="gray_dark">#858585</color>
     <color name="gray_light">#F0F0F0</color>
+  
+    <color name="lesson_card_background">#FFFFFFFF</color>
+    <color name="lesson_title_text">#FF2D2D2D</color>
+    <color name="lesson_subtitle_text">#FF666666</color>
+    <color name="lesson_points_text">#FF999999</color>
+    <color name="progress_bar_color">#FFFF9500</color>
+    <color name="progress_bar_background">#FFE5E5E5</color>
+    <color name="card_shadow">#1A000000</color>
+    <color name="screen_background">#FFF5F5F5</color>
+    <color name="lesson_number_icon">#FF666666</color>
+    <color name="advanced_star_icon">#FF666666</color>
+    <color name="tab_text_color">#FF2563EB</color>
+    <color name="tab_text_inactive">#FF666666</color>
+    <color name="red">#E53535</color>
 
 </resources>
