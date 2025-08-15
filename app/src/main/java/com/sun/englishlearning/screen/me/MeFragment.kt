@@ -50,7 +50,6 @@ class MeFragment : BaseFragment<FragmentMeBinding>() {
             // User is logged in: display personal information
             viewBinding.layoutUserProfile.visibility = View.VISIBLE
             viewBinding.tvUser.text = user.displayName
-//            viewBinding.tvUserEmail.text = user.email
         } else {
             // User is not logged in (rare case on this screen): hide information
             viewBinding.layoutUserProfile.visibility = View.GONE

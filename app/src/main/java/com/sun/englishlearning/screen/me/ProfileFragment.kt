@@ -1,11 +1,13 @@
 package com.sun.englishlearning.screen.me
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.credentials.ClearCredentialStateRequest
 import androidx.credentials.CredentialManager
 import androidx.lifecycle.lifecycleScope
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.sun.englishlearning.MainActivity
@@ -30,6 +32,19 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
     override fun initView() {
         viewBinding.llLogout.setOnClickListener {
             signOut()
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        updateUI(auth.currentUser)
+    }
+
+    private fun updateUI(user: FirebaseUser?) {
+        if (user!= null) {
+            viewBinding.tvProfileName.text = user.displayName
+            viewBinding.tvProfileEmail.text = user.email
         }
     }
 
