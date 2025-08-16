@@ -12,6 +12,7 @@ import com.sun.englishlearning.data.model.Lesson
 
 class CoursesAdapter(
     private var lessons: List<Lesson> = emptyList(),
+    private var userProgressMap: Map<String, Int> = emptyMap(), // Map of lessonId to progress percentage
     private val onLessonClick: (Lesson) -> Unit = {}
 ) : RecyclerView.Adapter<CoursesAdapter.LessonViewHolder>() {
 
@@ -30,8 +31,9 @@ class CoursesAdapter(
 
     override fun getItemCount(): Int = lessons.size
 
-    fun updateLessons(newLessons: List<Lesson>) {
+    fun updateLessons(newLessons: List<Lesson>, progressMap: Map<String, Int> = emptyMap()) {
         lessons = newLessons
+        userProgressMap = progressMap
         notifyDataSetChanged()
     }
 
@@ -46,14 +48,15 @@ class CoursesAdapter(
                 // Set lesson number
                 textLessonNumber.text = "Lesson: ${lesson.lessonNumber}"
                 
-                // Set advanced level
-                textAdvancedLevel.text = "Advanced: ${lesson.advancedLevel}"
+                // Set difficulty level
+                textAdvancedLevel.text = "Level: ${lesson.difficulty.name}"
                 
-                // Set points
-                textLessonPoints.text = "points: ${lesson.currentPoints} / ${lesson.totalPoints}"
+                // Set points (only show total points since current points is in UserLessonProgress)
+                textLessonPoints.text = "Total Points: ${lesson.totalPoints}"
                 
-                // Set progress
-                progressLesson.progress = lesson.progressPercentage
+                // Set progress from UserLessonProgress if available
+                val progress = userProgressMap[lesson.id] ?: 0
+                progressLesson.progress = progress
 
                 // Load lesson image using Glide
                 if (lesson.imageUrl.isNotEmpty()) {
