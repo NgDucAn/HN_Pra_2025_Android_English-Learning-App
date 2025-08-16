@@ -112,12 +112,12 @@ class LessonDetailFragment : Fragment(), LessonDetailContract.View {
 
             // Set lesson details
             textLessonNumber.text = "Lesson: ${lesson.lessonNumber}"
-            textAdvancedLevel.text = "Advanced: ${lesson.advancedLevel}"
-            textLessonPoints.text = "points: ${lesson.currentPoints} / ${lesson.totalPoints}"
+            textAdvancedLevel.text = "Level: ${lesson.difficulty.name}"
+            textLessonPoints.text = "Total Points: ${lesson.totalPoints}"
             textLessonDescription.text = lesson.description
 
-            // Set progress
-            progressLesson.progress = lesson.progressPercentage
+            // Set progress using UserLessonProgress if available
+            loadUserProgress(lesson.id)
 
             // Load lesson image
             if (lesson.imageUrl.isNotEmpty()) {
@@ -147,12 +147,12 @@ class LessonDetailFragment : Fragment(), LessonDetailContract.View {
     }
 
     override fun playWordSound(word: Word) {
-        Toast.makeText(requireContext(), "Playing sound for: ${word.name}", Toast.LENGTH_SHORT).show()
+        Toast.makeText(requireContext(), "Playing sound for: ${word.word}", Toast.LENGTH_SHORT).show()
         // TODO: Implement actual sound playing
     }
 
     override fun showWordDetail(word: Word) {
-        Toast.makeText(requireContext(), "Word: ${word.name}", Toast.LENGTH_SHORT).show()
+        Toast.makeText(requireContext(), "Word: ${word.word}", Toast.LENGTH_SHORT).show()
         // TODO: Implement word detail functionality
     }
 
@@ -187,5 +187,11 @@ class LessonDetailFragment : Fragment(), LessonDetailContract.View {
             Log.e(TAG, "Error navigating to flashcard", e)
             Toast.makeText(requireContext(), "Failed to open flashcard: ${e.message}", Toast.LENGTH_SHORT).show()
         }
+    }
+    
+    private fun loadUserProgress(lessonId: String) {
+        // TODO: Implement actual user progress loading
+        // For now, set a placeholder progress
+        viewBinding.progressLesson.progress = 25 // 25% as example
     }
 }
