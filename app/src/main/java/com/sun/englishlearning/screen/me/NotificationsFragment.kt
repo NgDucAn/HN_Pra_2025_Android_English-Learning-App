@@ -84,6 +84,24 @@ class NotificationsFragment : BaseFragment<FragmentNotificationsBinding>() {
             }
         }
 
+        // Radio group listener for AM/PM/Off
+        viewBinding.radioGroupAmpm.setOnCheckedChangeListener { _, checkedId ->
+            when (checkedId) {
+                R.id.radio_off -> {
+                    // Turn off all notifications when Off is selected
+                    viewBinding.switchNotifications.isChecked = false
+                    viewBinding.switchReminder.isChecked = false
+                    cancelTodayNotification()
+                    cancelDailyReminder()
+                    Toast.makeText(requireContext(), "All notifications turned off", Toast.LENGTH_SHORT).show()
+                }
+                R.id.radio_am, R.id.radio_pm -> {
+                    // AM/PM selected - notifications can be enabled
+                    // Don't automatically enable, let user choose
+                }
+            }
+        }
+
         // Save button
         viewBinding.btnSave.setOnClickListener {
             saveNotificationSettings()
