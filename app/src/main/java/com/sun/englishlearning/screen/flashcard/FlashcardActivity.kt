@@ -17,7 +17,7 @@ import com.sun.englishlearning.utils.AudioManager
 import com.sun.englishlearning.utils.DialogUtils
 import com.sun.englishlearning.utils.base.BaseActivity
 
-class FlashcardActivity : BaseActivity<ActivityFlashcardBinding>() {
+class FlashcardActivity : BaseActivity<ActivityFlashcardBinding>(), FlashcardFragment.OnProgressUpdateListener {
 
     companion object {
         private const val TAG = "FlashcardActivity"
@@ -44,6 +44,7 @@ class FlashcardActivity : BaseActivity<ActivityFlashcardBinding>() {
     private var currentIndex: Int = 0
     private var lessonTitle: String = ""
     private val audioManager = AudioManager.getInstance()
+    private var lessonIdForUpdate: String? = null
 
     override fun inflateBinding(inflater: LayoutInflater): ActivityFlashcardBinding {
         return ActivityFlashcardBinding.inflate(inflater)
@@ -312,8 +313,25 @@ class FlashcardActivity : BaseActivity<ActivityFlashcardBinding>() {
         }
     }
 
+    // Implementation of OnProgressUpdateListener
+    override fun onProgressUpdated(lessonId: String) {
+        Log.d(TAG, "Progress updated for lesson: $lessonId")
+        // Store lessonId for later use when finishing the activity
+        lessonIdForUpdate = lessonId
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         audioManager.release()
+    }
+    
+    override fun finish() {
+        // If we have a lessonId, send it back to the calling activity/fragment
+        if (lessonIdForUpdate != null) {
+            val resultIntent = Intent()
+            resultIntent.putExtra("updated_lesson_id", lessonIdForUpdate)
+            setResult(RESULT_OK, resultIntent)
+        }
+        super.finish()
     }
 }
