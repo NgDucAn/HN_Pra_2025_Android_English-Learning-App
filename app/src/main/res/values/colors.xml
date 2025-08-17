@@ -82,5 +82,11 @@
     <color name="text_hint">#7D8388</color>
     <color name="gray_200">#EAEBEC</color>
 
+    <!-- Login Screen Colors -->
+    <color name="login_primary">#4285F4</color>
+    <color name="login_text_hint">#666666</color>
+    <color name="login_separator">#E0E0E0</color>
+    <color name="login_google_bg">#F5F5F5</color>
+
 </resources>
 
