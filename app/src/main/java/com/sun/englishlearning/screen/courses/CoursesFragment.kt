@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Lifecycle
-import com.sun.englishlearning.utils.DialogUtils
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sun.englishlearning.R
@@ -62,10 +61,10 @@ class CoursesFragment : Fragment(), CoursesContract.View {
         presenter.detachView()
         _viewBinding = null
     }
-
+    
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-
+        
         // Handle result from activities that might update progress
         if (requestCode == 1001 && resultCode == Activity.RESULT_OK) {
             val updatedLessonId = data?.getStringExtra("updated_lesson_id")
@@ -164,10 +163,10 @@ class CoursesFragment : Fragment(), CoursesContract.View {
             Toast.makeText(requireContext(), "No completed lessons yet. Start learning to see progress!", Toast.LENGTH_SHORT).show()
         }
     }
-
-    // New methods for showing lessons with progress
-    override fun showOngoingLessonsWithProgress(lessons: List<Lesson>, progressMap: Map<String, Int>) {
-        coursesAdapter.updateLessonsWithProgress(lessons, progressMap)
+    
+    // Showing lessons with progress
+    fun showOngoingLessonsWithProgress(lessons: List<Lesson>, progressMap: Map<String, Int>, wordsLearnedMap: Map<String, Int>) {
+        coursesAdapter.updateLessonsWithProgress(lessons, progressMap, wordsLearnedMap)
 
         // Show empty state message if no lessons
         if (lessons.isEmpty()) {
@@ -175,8 +174,8 @@ class CoursesFragment : Fragment(), CoursesContract.View {
         }
     }
 
-    override fun showCompletedLessonsWithProgress(lessons: List<Lesson>, progressMap: Map<String, Int>) {
-        coursesAdapter.updateLessonsWithProgress(lessons, progressMap)
+    fun showCompletedLessonsWithProgress(lessons: List<Lesson>, progressMap: Map<String, Int>, wordsLearnedMap: Map<String, Int>) {
+        coursesAdapter.updateLessonsWithProgress(lessons, progressMap, wordsLearnedMap)
 
         // Show empty state message for completed lessons
         if (lessons.isEmpty()) {
@@ -184,11 +183,17 @@ class CoursesFragment : Fragment(), CoursesContract.View {
         }
     }
 
+    // Override methods for backward compatibility
+    override fun showOngoingLessonsWithProgress(lessons: List<Lesson>, progressMap: Map<String, Int>) {
+        showOngoingLessonsWithProgress(lessons, progressMap, emptyMap())
+    }
+
+    override fun showCompletedLessonsWithProgress(lessons: List<Lesson>, progressMap: Map<String, Int>) {
+        showCompletedLessonsWithProgress(lessons, progressMap, emptyMap())
+    }
+
     override fun showError(message: String) {
-        DialogUtils.showErrorDialog(
-            context = requireContext(),
-            message = message
-        )
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 
     override fun navigateToLessonDetail(lesson: Lesson) {
@@ -199,14 +204,9 @@ class CoursesFragment : Fragment(), CoursesContract.View {
     override fun updateTabSelection(isOngoing: Boolean) {
         selectTab(isOngoing)
     }
-
+    
     private fun refreshData() {
         // Refresh data when fragment becomes visible
         presenter.onTabSelected(isOngoingTabSelected)
-    }
-
-    // Public method to refresh data from other fragments
-    fun refreshDataFromExternal() {
-        refreshData()
     }
 }
