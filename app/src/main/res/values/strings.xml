@@ -103,4 +103,14 @@
     <string name="usage_permission_message">Để hiển thị số ngày bạn đã học, vui lòng cấp quyền truy cập lịch sử sử dụng ứng dụng cho EnglishLearning.</string>
     <string name="usage_permission_grant">Cấp quyền</string>
     <string name="usage_permission_cancel">Hủy</string>
+    
+    <!-- Notifications Fragment -->
+    <string name="notifications_general">General</string>
+    <string name="notifications_notifications">Notifications</string>
+    <string name="notifications_reminder">Reminder</string>
+    <string name="notifications_time">Time</string>
+    <string name="notifications_am">AM</string>
+    <string name="notifications_pm">PM</string>
+    <string name="notifications_off">Off</string>
+    <string name="notifications_save">Save</string>
 </resources>
