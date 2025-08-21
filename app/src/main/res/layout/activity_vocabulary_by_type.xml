@@ -9,33 +9,68 @@
     <!-- Top App Bar -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_56"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:padding="@dimen/dp_16"
-        android:background="@android:color/white">
+        android:paddingTop="@dimen/system_window_top_padding"
+        android:paddingBottom="@dimen/dp_16"
+        android:background="@android:color/white"
+        android:fitsSystemWindows="true"
+        android:elevation="@dimen/dp_4">
 
         <ImageView
             android:id="@+id/btn_back"
-            android:layout_width="@dimen/dp_24"
-            android:layout_height="@dimen/dp_24"
-            android:src="@drawable/ic_arrow_right"
-            android:rotation="180"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:src="@drawable/ic_arrow_back"
             android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:padding="@dimen/dp_4" />
+            android:padding="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:tint="@android:color/black"
+            android:clickable="true"
+            android:focusable="true"
+            android:elevation="@dimen/dp_8" />
 
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Words"
+            android:text="@string/default_words_title"
             android:textSize="@dimen/sp_18"
             android:textColor="@android:color/black"
             android:textStyle="bold"
             android:gravity="center"
             android:layout_marginStart="@dimen/dp_16"
             android:layout_marginEnd="@dimen/dp_40" />
+
+    </LinearLayout>
+
+    <!-- Search Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_16"
+        android:background="@android:color/white">
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:background="@drawable/bg_rounded_card"
+            android:hint="@string/search_hint"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:textColorHint="#999999"
+            android:padding="@dimen/dp_12"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="@dimen/dp_8"
+            android:singleLine="true"
+            android:imeOptions="actionSearch" />
 
     </LinearLayout>
 
@@ -72,9 +107,10 @@
             android:visibility="gone">
 
             <ImageView
+                android:id="@+id/iv_empty_icon"
                 android:layout_width="@dimen/dp_64"
                 android:layout_height="@dimen/dp_64"
-                android:src="@drawable/ic_search"
+                android:src="@drawable/ic_book"
                 app:tint="#CCCCCC"
                 android:layout_marginBottom="@dimen/dp_16" />
 
@@ -82,9 +118,19 @@
                 android:id="@+id/tv_empty_message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="No words found"
+                android:text="@string/no_words_found"
                 android:textSize="@dimen/sp_16"
                 android:textColor="#999999"
+                android:gravity="center"
+                android:layout_marginBottom="@dimen/dp_8" />
+
+            <TextView
+                android:id="@+id/tv_empty_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/complete_lessons_to_see_words"
+                android:textSize="@dimen/sp_14"
+                android:textColor="#CCCCCC"
                 android:gravity="center" />
 
         </LinearLayout>

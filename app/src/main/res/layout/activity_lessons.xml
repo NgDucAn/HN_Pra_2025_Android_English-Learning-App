@@ -13,23 +13,37 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:padding="@dimen/dp_16"
-        android:background="@color/white">
+        android:padding="@dimen/dp_12"
+        android:paddingTop="@dimen/dp_8"
+        android:paddingBottom="@dimen/dp_8"
+        android:background="@color/white"
+        android:elevation="@dimen/dp_4">
+
+        <!-- Back Button -->
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/dp_32"
+            android:layout_height="@dimen/dp_32"
+            android:src="@drawable/ic_arrow_back"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/dp_4"
+            android:layout_marginStart="@dimen/dp_4"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:tint="@android:color/black"
+            android:clickable="true"
+            android:focusable="true" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Courses"
+            android:text="@string/courses"
             android:textAlignment="center"
             android:textSize="@dimen/sp_18"
             android:textColor="@color/black"
-            android:fontFamily="@font/nunito_semibold" />
-
-        <!-- Invisible view for balance -->
-        <View
-            android:layout_width="@dimen/dp_24"
-            android:layout_height="@dimen/dp_24" />
+            android:fontFamily="@font/nunito_semibold"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_32" />
 
     </LinearLayout>
 
@@ -47,7 +61,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Ongoing"
+            android:text="@string/ongoing"
             android:textAlignment="center"
             android:textSize="@dimen/sp_16"
             android:textColor="@color/tab_text_color"
@@ -62,7 +76,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Completed"
+            android:text="@string/completed"
             android:textAlignment="center"
             android:textSize="@dimen/sp_16"
             android:textColor="@color/tab_text_inactive"

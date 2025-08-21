@@ -9,26 +9,36 @@
     <!-- Top App Bar -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_56"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:padding="@dimen/dp_16"
-        android:background="@android:color/white">
+        android:paddingTop="@dimen/system_window_top_padding"
+        android:paddingBottom="@dimen/dp_16"
+        android:background="@android:color/white"
+        android:fitsSystemWindows="true"
+        android:elevation="@dimen/dp_4">
 
         <ImageView
             android:id="@+id/btn_back"
-            android:layout_width="@dimen/dp_24"
-            android:layout_height="@dimen/dp_24"
-            android:src="@drawable/ic_arrow_right"
-            android:rotation="180"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:src="@drawable/ic_arrow_back"
             android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:padding="@dimen/dp_4" />
+            android:padding="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:tint="@android:color/black"
+            android:clickable="true"
+            android:focusable="true"
+            android:elevation="@dimen/dp_8" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Your saved Words"
+            android:text="@string/your_save_words"
             android:textSize="18sp"
             android:textColor="@android:color/black"
             android:textStyle="bold"
@@ -51,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_48"
             android:background="@drawable/bg_rounded_card"
-            android:hint="Search"
+            android:hint="@string/search_hint"
             android:textSize="16sp"
             android:textColor="@android:color/black"
             android:textColorHint="#999999"
@@ -63,14 +73,97 @@
 
     </LinearLayout>
 
-    <!-- Words List -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_saved_words"
+    <!-- Content Area -->
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:padding="@dimen/dp_16"
-        android:clipToPadding="false" />
+        android:layout_weight="1">
+
+        <!-- Words List -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_saved_words"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/dp_16"
+            android:clipToPadding="false" />
+
+        <!-- Empty State for No Saved Words -->
+        <LinearLayout
+            android:id="@+id/layout_empty_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="@dimen/dp_64"
+                android:layout_height="@dimen/dp_64"
+                android:src="@drawable/ic_bookmark"
+                app:tint="#CCCCCC"
+                android:layout_marginBottom="@dimen/dp_16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lets_start_learning"
+                android:textSize="@dimen/sp_16"
+                android:textColor="#999999"
+                android:gravity="center"
+                android:layout_marginBottom="@dimen/dp_8" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/save_words_while_learning"
+                android:textSize="@dimen/sp_14"
+                android:textColor="#CCCCCC"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <!-- Empty Search State -->
+        <LinearLayout
+            android:id="@+id/layout_empty_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:padding="@dimen/dp_32">
+
+            <ImageView
+                android:layout_width="@dimen/dp_80"
+                android:layout_height="@dimen/dp_80"
+                android:src="@drawable/ic_search"
+                app:tint="#CCCCCC"
+                android:layout_marginBottom="@dimen/dp_24" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_words_found"
+                android:textSize="@dimen/sp_18"
+                android:textColor="#666666"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="@dimen/dp_12" />
+
+            <TextView
+                android:id="@+id/tv_search_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/word_you_are_searching_for_not_in_saved_list"
+                android:textSize="@dimen/sp_14"
+                android:textColor="#999999"
+                android:gravity="center"
+                android:layout_marginHorizontal="@dimen/dp_16" />
+
+        </LinearLayout>
+
+    </FrameLayout>
 
 </LinearLayout>
 

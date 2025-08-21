@@ -62,8 +62,10 @@ class SavedWordsActivity : BaseActivity<ActivitySavedWordsBinding>() {
     }
 
     private fun setupClickListeners() {
-        binding.btnBack.setOnClickListener {
-            finish()
+        binding.apply {
+            btnBack.setOnClickListener {
+                onBackPressed()
+            }
         }
     }
 
@@ -83,12 +85,25 @@ class SavedWordsActivity : BaseActivity<ActivitySavedWordsBinding>() {
         filteredSavedWords.clear()
         if (query.isEmpty()) {
             filteredSavedWords.addAll(allSavedWords)
+            hideAllEmptyStates()
+            if (allSavedWords.isEmpty()) {
+                showEmptyState()
+            } else {
+                binding.rvSavedWords.visibility = View.VISIBLE
+            }
         } else {
             val filtered = allSavedWords.filter { savedWord ->
                 savedWord.word.lowercase().contains(query.lowercase()) ||
                         savedWord.definition.lowercase().contains(query.lowercase())
             }
             filteredSavedWords.addAll(filtered)
+            
+            if (filtered.isEmpty()) {
+                showEmptySearchState(query)
+            } else {
+                hideAllEmptyStates()
+                binding.rvSavedWords.visibility = View.VISIBLE
+            }
         }
         savedWordsAdapter.notifyDataSetChanged()
     }
@@ -121,6 +136,9 @@ class SavedWordsActivity : BaseActivity<ActivitySavedWordsBinding>() {
                     
                     if (savedWords.isEmpty()) {
                         showEmptyState()
+                    } else {
+                        binding.rvSavedWords.visibility = View.VISIBLE
+                        hideAllEmptyStates()
                     }
                 } else {
                     hideLoading()
@@ -144,7 +162,21 @@ class SavedWordsActivity : BaseActivity<ActivitySavedWordsBinding>() {
     }
 
     private fun showEmptyState() {
-        // You can show an empty state message if the layout supports it
+        binding.rvSavedWords.visibility = View.GONE
+        binding.layoutEmptyState.visibility = View.VISIBLE
+        binding.layoutEmptySearch.visibility = View.GONE
+    }
+
+    private fun showEmptySearchState(query: String) {
+        binding.rvSavedWords.visibility = View.GONE
+        binding.layoutEmptyState.visibility = View.GONE
+        binding.layoutEmptySearch.visibility = View.VISIBLE
+        binding.tvSearchMessage.text = "The word \"$query\" is not in your saved list"
+    }
+
+    private fun hideAllEmptyStates() {
+        binding.layoutEmptyState.visibility = View.GONE
+        binding.layoutEmptySearch.visibility = View.GONE
     }
 
     private fun playWordSound(soundUrl: String) {
@@ -186,7 +218,12 @@ class SavedWordsActivity : BaseActivity<ActivitySavedWordsBinding>() {
                     Toast.makeText(this@SavedWordsActivity, "Word removed from saved list", Toast.LENGTH_SHORT).show()
                     
                     if (filteredSavedWords.isEmpty()) {
-                        showEmptyState()
+                        val currentQuery = binding.etSearch.text.toString()
+                        if (currentQuery.isNotEmpty()) {
+                            showEmptySearchState(currentQuery)
+                        } else if (allSavedWords.isEmpty()) {
+                            showEmptyState()
+                        }
                     }
                 } else {
                     Toast.makeText(this@SavedWordsActivity, "Failed to remove word", Toast.LENGTH_SHORT).show()

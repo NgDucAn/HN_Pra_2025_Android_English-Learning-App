@@ -9,26 +9,36 @@
     <!-- Top App Bar -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_56"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:padding="@dimen/dp_16"
-        android:background="@android:color/white">
+        android:paddingTop="@dimen/dp_48"
+        android:paddingBottom="@dimen/dp_16"
+        android:background="@android:color/white"
+        android:fitsSystemWindows="true"
+        android:elevation="@dimen/dp_4">
 
         <ImageView
             android:id="@+id/btn_back"
-            android:layout_width="@dimen/dp_24"
-            android:layout_height="@dimen/dp_24"
-            android:src="@drawable/ic_arrow_right"
-            android:rotation="180"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:src="@drawable/ic_arrow_back"
             android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:padding="@dimen/dp_4" />
+            android:padding="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:tint="@android:color/black"
+            android:clickable="true"
+            android:focusable="true"
+            android:elevation="@dimen/dp_8" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Word Search"
+            android:text="@string/word_search_title"
             android:textSize="@dimen/sp_18"
             android:textColor="@android:color/black"
             android:textStyle="bold"
@@ -57,7 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/bg_rounded_card"
-                android:hint="Enter word to search..."
+                android:hint="@string/enter_word_to_search_hint"
                 android:textSize="@dimen/sp_16"
                 android:textColor="@android:color/black"
                 android:textColorHint="#999999"
@@ -87,7 +97,7 @@
             android:id="@+id/btn_search"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/dp_48"
-            android:text="Search"
+            android:text="@string/search_button"
             android:textColor="@android:color/white"
             android:background="@drawable/bg_blue_button"
             android:paddingStart="@dimen/dp_16"
@@ -146,7 +156,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="example"
+                            android:text="@string/sample_word_example"
                             android:textSize="@dimen/sp_24"
                             android:textColor="@android:color/black"
                             android:textStyle="bold" />
@@ -167,7 +177,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="/ɪɡˈzæm.pəl/"
+                            android:text="@string/sample_phonetic"
                             android:textSize="@dimen/sp_16"
                             android:textColor="#666666"
                             android:fontFamily="serif" />
@@ -188,7 +198,7 @@
                         android:id="@+id/tv_part_of_speech"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="noun"
+                        android:text="@string/sample_part_of_speech"
                         android:textSize="@dimen/sp_14"
                         android:textColor="@color/main_blue"
                         android:background="@drawable/bg_rounded_card"
@@ -203,7 +213,7 @@
                         android:id="@+id/tv_definition"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="a thing characteristic of its kind or illustrating a general rule"
+                        android:text="@string/sample_definition"
                         android:textSize="@dimen/sp_16"
                         android:textColor="@android:color/black"
                         android:layout_marginBottom="@dimen/dp_16"
@@ -214,7 +224,7 @@
                         android:id="@+id/btn_save_word"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Save Word"
+                        android:text="@string/save_word"
                         android:textColor="@android:color/white"
                         android:background="@drawable/bg_blue_button"
                         android:layout_marginTop="@dimen/dp_8"
@@ -245,7 +255,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Search for a word to see its definition"
+                    android:text="@string/search_prompt"
                     android:textSize="@dimen/sp_16"
                     android:textColor="#999999"
                     android:gravity="center" />
@@ -265,7 +275,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Word not found"
+                    android:text="@string/word_not_found"
                     android:textSize="@dimen/sp_18"
                     android:textColor="@color/state_error"
                     android:textStyle="bold"
@@ -274,7 +284,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Please try a different word"
+                    android:text="@string/please_try_different_word"
                     android:textSize="@dimen/sp_14"
                     android:textColor="#999999"
                     android:gravity="center" />
