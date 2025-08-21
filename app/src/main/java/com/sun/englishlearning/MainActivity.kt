@@ -7,6 +7,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.sun.englishlearning.databinding.ActivityMainBinding
 import com.sun.englishlearning.screen.login.LoginActivity
+import com.sun.englishlearning.utils.LocaleHelper
 import com.sun.englishlearning.utils.base.BaseActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
@@ -27,7 +28,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     override fun attachBaseContext(newBase: Context) {
-        super.attachBaseContext(com.sun.englishlearning.utils.LocaleHelper.onAttach(newBase))
+        super.attachBaseContext(LocaleHelper.onAttach(newBase))
     }
 
     fun navigateToLogin() {
