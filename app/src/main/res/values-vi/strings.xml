@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EnglishLearning</string>
+    <string name="default_web_client_id">213565137892-6mumd525dp95fulh2bn21fq56lu55c7u.apps.googleusercontent.com</string>
+
+    <string name="title_home">Trang chủ</string>
+    <string name="title_courses">Khóa học</string>
+    <string name="title_review">Ôn tập</string>
+    <string name="title_me">Cá nhân</string>
+
+    <string name="let_go">Bắt đầu nào!</string>
+    <string name="already_got_an_account">Đã có tài khoản?</string>
+    <string name="login">Đăng nhập</string>
+    <string name="title_ob1">Bài học theo yêu cầu</string>
+    <string name="content_ob1">Bây giờ, đến lượt bạn chọn chủ đề cho khóa học của mình. Trong SpeakUp, bạn sẽ học từ vựng, cụm từ, phát âm và các mẫu ngữ pháp qua nhiều khóa học với các chủ đề đa dạng. Hãy thử và cảm nhận hiệu quả.</string>
+    <string name="title_ob2">Học mà chơi!</string>
+    <string name="content_ob2">Những người thông minh thích cạnh tranh, hoặc những người tìm kiếm niềm vui trong mọi thứ, sẽ có một trải nghiệm học tập tuyệt vời ở đây. Mỗi bước bạn đi, mọi tiến bộ bạn đạt được, SpeakUp đều có phần thưởng để khuyến khích thành tích của bạn.</string>
+    <string name="title_ob3">Học vượt ra ngoài những bức tường lớp học</string>
+    <string name="content_ob3">Tìm giáo viên được chứng nhận, cá nhân hóa kế hoạch học tiếng Anh của riêng bạn.</string>
+    <string name="welcome_title">Chào mừng!</string>
+    <string name="sign_out_label">Đăng xuất</string>
+    <string name="start_label">Bắt đầu</string>
+
+    <string name="greeting_hi">Chào, %1$s👋</string>
+    <string name="start_learning">Hãy bắt đầu học nào!</string>
+    <string name="study_time_this_week">Thời gian bạn đã học trong tuần này</string>
+    <string name="lets_start">Bắt đầu nào</string>
+    <string name="courses">Khóa học</string>
+    <string name="see_all">Xem toàn bộ →</string>
+    <string name="travel">Du lịch</string>
+    <string name="practice">Luyện tập</string>
+    <string name="business">Kinh doanh</string>
+    <string name="academic">Học thuật</string>
+    <string name="nearby_learning">Gần đây học</string>
+    <string name="tourist_trip">Chuyến đi du lịch</string>
+    <string name="hang_out_with_friends">Đi chơi với bạn bè</string>
+    <string name="lesson_count">Bài học: %d</string>
+    <string name="advanced_level">Nâng cao: %d</string>
+    <string name="progress_format">%d/%d</string>
+    <string name="suggestions_for_you">Gợi ý cho bạn</string>
+    <string name="conversation_office">Cách hội thoại trong văn phòng với đồng nghiệp</string>
+    <string name="at_work_vocabulary">Từ vựng công sở</string>
+    <string name="study_time_format">%dgiờ %dphút</string>
+    <string name="recent_lessons_empty_title">Chưa có bài học gần đây</string>
+    <string name="recent_lessons_empty_subtitle">Bắt đầu học để xem tiến trình của bạn tại đây</string>
+
+    <string name="your_vocabulary">Từ vựng của bạn</string>
+    <string name="weak_words">Từ yếu</string>
+    <string name="today_words">Từ hôm nay</string>
+    <string name="medium_words">Từ trung bình</string>
+    <string name="strong_words">Từ đã thuộc</string>
+    <string name="your_save_words">Từ đã lưu của bạn</string>
+
+    <string name="profile_learning">Đang học</string>
+    <string name="profile_days_learned">Số ngày đã học</string>
+    <string name="weekday_mon">T2</string>
+    <string name="weekday_tue">T3</string>
+    <string name="weekday_wed">T4</string>
+    <string name="weekday_thu">T5</string>
+    <string name="weekday_fri">T6</string>
+    <string name="weekday_sat">T7</string>
+    <string name="weekday_sun">CN</string>
+    <string name="profile_title">Hồ sơ</string>
+    <string name="profile_country">Quốc gia</string>
+    <string name="profile_native_language">Ngôn ngữ mẹ đẻ</string>
+    <string name="language_english">Tiếng Anh</string>
+    <string name="language_vietnamese">Tiếng Việt</string>
+    <string name="location_hanoi">Hà Nội</string>
+    <string name="speak_level_beginner">Nói tiếng Anh ở trình độ mới bắt đầu</string>
+    <string name="learning_english">Đang học tiếng Anh</string>
+    <string name="learning_time_today">Thời gian học hôm nay</string>
+    <string name="days_learned_this_week">Số ngày đã học trong tuần</string>
+    <string name="profile_notifications">Thông báo</string>
+    <string name="profile_terms">Điều khoản dịch vụ</string>
+    <string name="profile_privacy">Chính sách bảo mật</string>
+    <string name="profile_logout">Đăng xuất</string>
+    <string name="profile_delete_account">Xóa tài khoản</string>
+
+    <string name="app_logo">Logo ứng dụng</string>
+    <string name="login_title">Đăng nhập</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Mật khẩu</string>
+    <string name="forgot_password">Quên mật khẩu?</string>
+    <string name="login_button">Đăng nhập</string>
+    <string name="or_separator">Hoặc</string>
+    <string name="google_sign_in_button">Đăng nhập với tài khoản Google</string>
+    <string name="no_account_prompt">Chưa có tài khoản?</string>
+    <string name="register_link">Đăng ký</string>
+    <string name="register_title">Tạo tài khoản</string>
+    <string name="name_hint">Họ và tên</string>
+    <string name="password_hint_register">Mật khẩu (ít nhất 6 ký tự)</string>
+    <string name="confirm_password_hint">Xác nhận mật khẩu</string>
+    <string name="register_button">Đăng ký</string>
+    <string name="already_have_account">Đã có tài khoản?</string>
+    <string name="login_link">Đăng nhập</string>
+    <string name="reset_password">Đặt lại mật khẩu</string>
+    <string name="forgot_password_prompt">Quên mật khẩu? </string>
+    <string name="no_account_text">Bạn chưa có tài khoản? </string>
+    <string name="welcome_register_title">Chào mừng đến EziEng!</string>
+    <string name="create_account_button">Tạo tài khoản</string>
+    <string name="terms_and_conditions">Bằng cách đăng ký, bạn đồng ý với\ncác điều khoản dịch vụ và chính sách bảo mật của chúng tôi</string>
+    <string name="google_sign_up_button">Đăng ký với tài khoản Google</string>
+
+    <string name="hello_blank_fragment">Xin chào fragment trống</string>
+
+    <string name="logout_confirmation_title">Xác nhận đăng xuất</string>
+    <string name="logout_confirmation_message">Bạn có chắc chắn muốn đăng xuất khỏi tài khoản?</string>
+    <string name="logout_confirm">Đăng xuất</string>
+    <string name="logout_cancel">Hủy</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_error_title">Lỗi</string>
+    <string name="error_general">Đã xảy ra lỗi. Vui lòng thử lại.</string>
+    <string name="usage_permission_title">Cần quyền truy cập lịch sử sử dụng</string>
+    <string name="usage_permission_message">Để hiển thị số ngày bạn đã học, vui lòng cấp quyền truy cập lịch sử sử dụng ứng dụng cho EnglishLearning.</string>
+    <string name="usage_permission_grant">Cấp quyền</string>
+    <string name="usage_permission_cancel">Hủy</string>
+
+    <string name="phonetic_transcription">Phiên âm</string>
+    <string name="english_word">Từ tiếng Anh</string>
+    <string name="play_pronunciation_audio">Phát âm thanh phát âm</string>
+    <string name="definition">Định nghĩa</string>
+    <string name="go_back_to_lesson">Quay lại bài học</string>
+    <string name="lesson">Bài học</string>
+    <string name="current_flashcard_position">Vị trí thẻ flashcard hiện tại</string>
+    <string name="learned">Đã học</string>
+
+    <string name="notifications_general">Chung</string>
+    <string name="notifications_notifications">Thông báo</string>
+    <string name="notifications_reminder">Lời nhắc</string>
+    <string name="notifications_time">Thời gian</string>
+    <string name="notifications_am">SA</string>
+    <string name="notifications_pm">CH</string>
+    <string name="notifications_off">Tắt</string>
+    <string name="notifications_save">Lưu</string>
+
+    <string name="save_this_word">Lưu từ này</string>
+    <string name="mark_as_learned">Đánh dấu là đã học</string>
+    <string name="learned_checkmark">Đã học ✓</string>
+    <string name="example">Ví dụ</string>
+    <string name="english_word_with_name">Từ tiếng Anh: %1$s</string>
+    <string name="definition_with_content">Định nghĩa: %1$s</string>
+    <string name="example_sentence_with_content">Ví dụ: %1$s</string>
+    <string name="pronunciation_with_content">Phát âm: %1$s</string>
+    <string name="audio_not_available">Không có âm thanh cho %1$s</string>
+    <string name="play_pronunciation_for">Phát âm cho %1$s</string>
+    <string name="part_of_speech_with_content">Loại từ: %1$s</string>
+
+    <string name="unknown_lesson">Bài học không xác định</string>
+    <string name="words_progress_format">%1$d / %2$d từ</string>
+    <string name="error_loading_lesson">Lỗi tải bài học</string>
+    <string name="words_progress_error">0 / 0 từ</string>
+
+    <string name="test_vocabulary">Kiểm tra từ vựng</string>
+    <string name="test_results">Kết quả kiểm tra</string>
+    <string name="test_completed">Đã hoàn thành bài kiểm tra!</string>
+    <string name="test_score_format">Câu trả lời đúng: %1$d trên %2$d\nĐiểm: %3$d%%</string>
+    <string name="exit_test_title">Thoát bài kiểm tra</string>
+    <string name="exit_test_message">Bạn có chắc muốn thoát không? Tiến trình của bạn sẽ bị mất.</string>
+    <string name="exit_test_positive">Thoát</string>
+    <string name="exit_test_negative">Tiếp tục kiểm tra</string>
+    <string name="text_correct_word">Từ đúng là: %1$s</string>
+    <string name="check_learned_result_incorrect">Sai rồi! Thử lại.</string>
+    <string name="check_learned_result_correct">Đúng rồi! Làm tốt lắm.</string>
+    <string name="definition_not_available">Không có định nghĩa.</string>
+
+    <string name="lesson_topic_format">Chủ đề: %1$s</string>
+    <string name="word_count_format">%1$d từ</string>
+    <string name="words_learned_format">%1$d / %2$d từ đã học</string>
+    <string name="next">Tiếp theo</string>
+    <string name="check_answer">Kiểm tra câu trả lời</string>
+    <string name="enter_the_word">Nhập từ</string>
+
+    <string name="word_search_title">Tìm kiếm từ</string>
+    <string name="search_button">Tìm kiếm</string>
+    <string name="search_prompt">Tìm kiếm một từ để xem định nghĩa của nó</string>
+    <string name="please_enter_word_to_search">Vui lòng nhập từ để tìm kiếm</string>
+    <string name="word_not_found">Không tìm thấy từ</string>
+    <string name="network_error_try_again">Lỗi mạng. Vui lòng thử lại.</string>
+    <string name="no_audio_available">Không có âm thanh cho từ này</string>
+    <string name="playing_pronunciation">Đang phát âm...</string>
+    <string name="unable_to_play_audio">Không thể phát âm thanh</string>
+    <string name="unable_to_play_sound">Không thể phát âm thanh</string>
+    <string name="please_login_to_save_words">Vui lòng đăng nhập để lưu từ</string>
+    <string name="word_removed_from_saved_list">Đã xóa từ khỏi danh sách đã lưu</string>
+    <string name="failed_to_remove_word">Không thể xóa từ</string>
+    <string name="word_saved_successfully">Đã lưu từ thành công!</string>
+    <string name="failed_to_save_word">Không thể lưu từ</string>
+    <string name="remove_word">Xóa từ</string>
+    <string name="save_word">Lưu từ</string>
+    <string name="error_format">Lỗi: %1$s</string>
+
+    <string name="default_words_title">Từ vựng</string>
+    <string name="lets_start_learning">Hãy bắt đầu học nào!</string>
+    <string name="practice_lessons_to_build_vocabulary">Luyện tập các bài học để xây dựng vốn từ vựng của bạn</string>
+    <string name="keep_practicing_to_strengthen_words">Tiếp tục luyện tập để củng cố vốn từ của bạn</string>
+    <string name="master_words_through_practice">Nắm vững các từ qua luyện tập</string>
+    <string name="save_words_while_learning">Lưu các từ trong khi học để xem lại sau</string>
+    <string name="complete_lessons_to_see_words">Hoàn thành các bài học để xem các từ ở đây</string>
+    <string name="no_audio_available_for_word">Không có âm thanh cho từ này</string>
+    <string name="playing_pronunciation_ellipsis">Đang phát âm...</string>
+    <string name="unable_to_play_sound_format">Không thể phát âm thanh: %1$s</string>
+    <string name="word_removed_successfully">Đã xóa từ thành công</string>
+    <string name="failed_to_remove_word_generic">Không thể xóa từ</string>
+    <string name="error_removing_word_format">Lỗi khi xóa từ: %1$s</string>
+    <string name="search_hint">Tìm kiếm</string>
+    <string name="no_words_found">Không tìm thấy từ nào</string>
+    <string name="word_you_are_searching_for_not_in_saved_list">Từ bạn đang tìm kiếm không có trong danh sách đã lưu</string>
+
+    <string name="ongoing">Đang diễn ra</string>
+    <string name="completed">Đã hoàn thành</string>
+
+    <string name="sample_word_as_many_as">nhiều như</string>
+    <string name="sample_lesson_count">Bài học: 3</string>
+    <string name="sample_advanced_count">Nâng cao: 76</string>
+    <string name="sample_progress_count">6/10</string>
+    <string name="sample_lesson_count_five">5 bài học</string>
+    <string name="sample_word_example">ví dụ</string>
+    <string name="sample_phonetic">/vɪ́ zu⁶/</string>
+    <string name="sample_part_of_speech">danh từ</string>
+    <string name="sample_definition">một sự vật đặc trưng cho loại của nó hoặc minh họa một quy tắc chung</string>
+    <string name="please_try_different_word">Vui lòng thử một từ khác</string>
+    <string name="lesson_details_title">Chi tiết bài học</string>
+    <string name="vocabulary_label">Từ vựng</string>
+    <string name="test_label">Kiểm tra</string>
+    <string name="enter_word_to_search_hint">Nhập từ để tìm kiếm...</string>
+</resources>

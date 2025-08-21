@@ -1,11 +1,13 @@
 package com.sun.englishlearning
 
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.sun.englishlearning.databinding.ActivityMainBinding
 import com.sun.englishlearning.screen.login.LoginActivity
+import com.sun.englishlearning.utils.LocaleHelper
 import com.sun.englishlearning.utils.base.BaseActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
@@ -24,6 +26,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun initData() {
     }
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(LocaleHelper.onAttach(newBase))
+    }
+
     fun navigateToLogin() {
         val intent = Intent(this, LoginActivity::class.java)
         // These flags will clear all old Activities (like MainActivity) from the back stack

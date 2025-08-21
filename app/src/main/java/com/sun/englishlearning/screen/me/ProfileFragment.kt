@@ -18,6 +18,7 @@ import com.sun.englishlearning.data.model.Language
 import com.sun.englishlearning.databinding.FragmentProfileBinding
 import com.sun.englishlearning.screen.me.adapter.LanguageSpinnerAdapter
 import com.sun.englishlearning.utils.DialogUtils
+import com.sun.englishlearning.utils.LocaleHelper
 import com.sun.englishlearning.utils.base.BaseFragment
 import kotlinx.coroutines.launch
 
@@ -73,22 +74,31 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
             Language("en", getString(R.string.language_english), "en", R.drawable.ic_us),
             Language("vi", getString(R.string.language_vietnamese), "vi", R.drawable.ic_vietnam)
         )
-        
+
+        // LocaleHelper
+        val currentLang = LocaleHelper.getLanguage(requireContext())
+        val defaultIndex = languages.indexOfFirst { it.code == currentLang }.takeIf { it >= 0 } ?: 0
+
         // Create and set adapter
         languageSpinnerAdapter = LanguageSpinnerAdapter(requireContext(), languages)
         viewBinding.spinnerLanguage.adapter = languageSpinnerAdapter
-        
-        // Set default selection to Vietnamese (index 1)
-        viewBinding.spinnerLanguage.setSelection(1)
-        selectedLanguage = languages[1]
-        
+
+        // Set default selection
+        viewBinding.spinnerLanguage.setSelection(defaultIndex)
+        selectedLanguage = languages[defaultIndex]
+
         // Handle language selection
         viewBinding.spinnerLanguage.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                selectedLanguage = languages[position]
-                // TODO: Implement language change logic here
+                val lang = languages[position]
+                if (lang.code != LocaleHelper.getLanguage(requireContext())) {
+                    LocaleHelper.setLocale(requireContext().applicationContext, lang.code)
+                    // Reload activity
+                    activity?.recreate()
+                }
+                selectedLanguage = lang
             }
-            
+
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 // Do nothing
             }
