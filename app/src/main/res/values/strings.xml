@@ -1,11 +1,12 @@
 <resources>
     <string name="app_name">EnglishLearning</string>
     <string name="default_web_client_id">213565137892-6mumd525dp95fulh2bn21fq56lu55c7u.apps.googleusercontent.com</string>
-    <!-- Bottom Navigation Bar Titles -->
+
     <string name="title_home">Home</string>
     <string name="title_courses">Courses</string>
     <string name="title_review">Review</string>
     <string name="title_me">Me</string>
+
     <string name="let_go">Let\'s go!</string>
     <string name="already_got_an_account">Already got an account?</string>
     <string name="login">Login</string>
@@ -15,36 +16,33 @@
     <string name="content_ob2">The smart competitive ones, or those who look for the fun side of everything, will have a great learning experience here. Every step you take, any progress you make, SpeakUp has a reward to encourage your achievement.</string>
     <string name="title_ob3">Take learning beyond the classroom walls</string>
     <string name="content_ob3">Find certified teachers, personalize your own English learning plan.</string>
-
     <string name="welcome_title">Welcome!</string>
     <string name="sign_out_label">Sign out</string>
     <string name="start_label">Start</string>
 
-    <!-- Home Screen Strings -->
-    <string name="greeting_hi">Hi, Huan👋</string>
+    <string name="greeting_hi">Hi, %1$s👋</string>
     <string name="start_learning">Let\'s start learning!</string>
-    <string name="study_time_this_week">Thời gian bạn đã học trong tuần này</string>
+    <string name="study_time_this_week">Your study time this week</string>
     <string name="lets_start">Let\'s start</string>
-    <string name="courses">Khóa học</string>
-    <string name="see_all">Xem toàn bộ →</string>
+    <string name="courses">Courses</string>
+    <string name="see_all">See all →</string>
     <string name="travel">Travel</string>
     <string name="practice">Practice</string>
     <string name="business">Business</string>
     <string name="academic">Academic</string>
-    <string name="nearby_learning">Gần đây học</string>
+    <string name="nearby_learning">Recently learned</string>
     <string name="tourist_trip">Tourist trip</string>
     <string name="hang_out_with_friends">Hang out with friends</string>
     <string name="lesson_count">Lesson: %d</string>
     <string name="advanced_level">Advanced: %d</string>
     <string name="progress_format">%d/%d</string>
-    <string name="suggestions_for_you">Gợi ý cho bạn</string>
+    <string name="suggestions_for_you">Suggestions for you</string>
     <string name="conversation_office">How to Conversation in the office with your colleagues</string>
     <string name="at_work_vocabulary">At Work vocabulary</string>
     <string name="study_time_format">%dh %dm</string>
-    <string name="recent_lessons_empty_title">Chưa có bài học gần đây</string>
-    <string name="recent_lessons_empty_subtitle">Bắt đầu học để xem tiến trình của bạn tại đây</string>
+    <string name="recent_lessons_empty_title">No recent lessons yet</string>
+    <string name="recent_lessons_empty_subtitle">Start learning to see your progress here</string>
 
-    <!-- Review Screen Strings -->
     <string name="your_vocabulary">Your vocabulary</string>
     <string name="weak_words">Weak words</string>
     <string name="today_words">Today words</string>
@@ -52,8 +50,6 @@
     <string name="strong_words">Strong words</string>
     <string name="your_save_words">Your save words</string>
 
-
-    <!-- Profile / Me Screen -->
     <string name="profile_learning">Learning</string>
     <string name="profile_days_learned">Days learned</string>
     <string name="weekday_mon">Mon</string>
@@ -63,65 +59,61 @@
     <string name="weekday_fri">Fri</string>
     <string name="weekday_sat">Sat</string>
     <string name="weekday_sun">Sun</string>
-
-<!--    Auth Screen-->
-    <string name="app_logo">Logo ứng dụng</string>
-    <string name="login_title">Đăng nhập</string>
-    <string name="email_hint">Email</string>
-    <string name="password_hint">Mật khẩu</string>
-    <string name="forgot_password">Quên mật khẩu?</string>
-    <string name="login_button">Đăng nhập</string>
-    <string name="or_separator">Hoặc</string>
-    <string name="google_sign_in_button">Đăng nhập với tài khoản Google</string>
-    <string name="no_account_prompt">Chưa có tài khoản?</string>
-    <string name="register_link">Đăng ký</string>
-    <string name="register_title">Tạo tài khoản</string>
-    <string name="name_hint">Họ và tên</string>
-    <string name="password_hint_register">Mật khẩu (ít nhất 6 ký tự)</string>
-    <string name="confirm_password_hint">Xác nhận mật khẩu</string>
-    <string name="register_button">Đăng ký</string>
-    <string name="already_have_account">Đã có tài khoản?</string>
-    <string name="login_link">Đăng nhập</string>
-    <string name="reset_password">Đặt lại mật khẩu</string>
-    <string name="forgot_password_prompt">Quên mật khẩu? </string>
-    <string name="no_account_text">Bạn chưa có tài khoản? </string>
-    <string name="welcome_register_title">Chào mừng đến EziEng!</string>
-    <string name="create_account_button">Tạo tài khoản</string>
-    <string name="terms_and_conditions">Bằng cách đăng ký, bạn đồng ý với\ncác điều khoản dịch vụ và chính sách bảo mật của chúng tôi</string>
-    <string name="google_sign_up_button">Đăng ký với tài khoản Google</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
     <string name="profile_title">Profile</string>
     <string name="profile_country">Country</string>
     <string name="profile_native_language">Native language</string>
     <string name="language_english">English</string>
-    <string name="language_vietnamese">Tiếng Việt</string>
-
-    <!-- Me Fragment -->
-    <string name="location_hanoi">Ha Noi</string>
+    <string name="language_vietnamese">Vietnamese</string>
+    <string name="location_hanoi">Hanoi</string>
     <string name="speak_level_beginner">Speak English at beginner level</string>
     <string name="learning_english">Learning English</string>
     <string name="learning_time_today">Today\'s learning time</string>
     <string name="days_learned_this_week">Days learned this week</string>
-
     <string name="profile_notifications">Notifications</string>
     <string name="profile_terms">Terms of Service</string>
     <string name="profile_privacy">Privacy policy</string>
     <string name="profile_logout">Logout</string>
     <string name="profile_delete_account">Delete account</string>
 
-    <!-- Logout Dialog -->
-    <string name="logout_confirmation_title">Xác nhận đăng xuất</string>
-    <string name="logout_confirmation_message">Bạn có chắc chắn muốn đăng xuất khỏi tài khoản?</string>
-    <string name="logout_confirm">Đăng xuất</string>
-    <string name="logout_cancel">Hủy</string>
+    <string name="app_logo">App logo</string>
+    <string name="login_title">Login</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="login_button">Login</string>
+    <string name="or_separator">Or</string>
+    <string name="google_sign_in_button">Sign in with Google</string>
+    <string name="no_account_prompt">Don\'t have an account?</string>
+    <string name="register_link">Register</string>
+    <string name="register_title">Create account</string>
+    <string name="name_hint">Full name</string>
+    <string name="password_hint_register">Password (at least 6 characters)</string>
+    <string name="confirm_password_hint">Confirm password</string>
+    <string name="register_button">Register</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="login_link">Login</string>
+    <string name="reset_password">Reset password</string>
+    <string name="forgot_password_prompt">Forgot password? </string>
+    <string name="no_account_text">Don\'t have an account? </string>
+    <string name="welcome_register_title">Welcome to EziEng!</string>
+    <string name="create_account_button">Create account</string>
+    <string name="terms_and_conditions">By signing up, you agree to our\nterms of service and privacy policy</string>
+    <string name="google_sign_up_button">Sign up with Google</string>
 
-    <!-- Dialog -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="logout_confirmation_title">Confirm Logout</string>
+    <string name="logout_confirmation_message">Are you sure you want to log out of your account?</string>
+    <string name="logout_confirm">Logout</string>
+    <string name="logout_cancel">Cancel</string>
     <string name="dialog_ok">OK</string>
-    <string name="dialog_error_title">L—i</string>
+    <string name="dialog_error_title">Error</string>
     <string name="error_general">An error occurred. Please try again.</string>
+    <string name="usage_permission_title">Usage Access Permission Needed</string>
+    <string name="usage_permission_message">To display the number of days you have learned, please grant usage access permission to EnglishLearning.</string>
+    <string name="usage_permission_grant">Grant</string>
+    <string name="usage_permission_cancel">Cancel</string>
+
     <string name="phonetic_transcription">Phonetic transcription</string>
     <string name="english_word">English word</string>
     <string name="play_pronunciation_audio">Play pronunciation audio</string>
@@ -129,12 +121,8 @@
     <string name="go_back_to_lesson">Go back to lesson</string>
     <string name="lesson">Lesson</string>
     <string name="current_flashcard_position">Current flashcard position</string>
-    <string name="usage_permission_title">Cần quyền truy cập lịch sử sử dụng ứng dụng</string>
-    <string name="usage_permission_message">Để hiển thị số ngày bạn đã học, vui lòng cấp quyền truy cập lịch sử sử dụng ứng dụng cho EnglishLearning.</string>
-    <string name="usage_permission_grant">Cấp quyền</string>
-    <string name="usage_permission_cancel">Hủy</string>
-    
-    <!-- Notifications Fragment -->
+    <string name="learned">Learned</string>
+
     <string name="notifications_general">General</string>
     <string name="notifications_notifications">Notifications</string>
     <string name="notifications_reminder">Reminder</string>
@@ -143,20 +131,24 @@
     <string name="notifications_pm">PM</string>
     <string name="notifications_off">Off</string>
     <string name="notifications_save">Save</string>
-    <string name="learned">Learned</string>
 
-    <!-- Flashcard Strings -->
     <string name="save_this_word">Save this word</string>
     <string name="mark_as_learned">Mark as Learned</string>
     <string name="learned_checkmark">Learned ✓</string>
+    <string name="example">Example</string>
+    <string name="english_word_with_name">English word: %1$s</string>
+    <string name="definition_with_content">Definition: %1$s</string>
+    <string name="example_sentence_with_content">Example: %1$s</string>
+    <string name="pronunciation_with_content">Pronunciation: %1$s</string>
+    <string name="audio_not_available">Audio not available for %1$s</string>
+    <string name="play_pronunciation_for">Play pronunciation for %1$s</string>
+    <string name="part_of_speech_with_content">Part of speech: %1$s</string>
 
-    <!-- Courses Adapter Strings -->
     <string name="unknown_lesson">Unknown Lesson</string>
     <string name="words_progress_format">%1$d / %2$d words</string>
     <string name="error_loading_lesson">Error loading lesson</string>
     <string name="words_progress_error">0 / 0 words</string>
 
-    <!-- Test Flashcard -->
     <string name="test_vocabulary">Test Vocabulary</string>
     <string name="test_results">Test Results</string>
     <string name="test_completed">Test completed!</string>
@@ -166,8 +158,10 @@
     <string name="exit_test_positive">Exit</string>
     <string name="exit_test_negative">Continue Testing</string>
     <string name="text_correct_word">The correct word is: %1$s</string>
+    <string name="check_learned_result_incorrect">Incorrect! Try again.</string>
+    <string name="check_learned_result_correct">Correct! Well done.</string>
+    <string name="definition_not_available">Definition not available.</string>
 
-    <!-- Lesson Detail Strings -->
     <string name="lesson_topic_format">Topic: %1$s</string>
     <string name="word_count_format">%1$d words</string>
     <string name="words_learned_format">%1$d / %2$d words learned</string>
@@ -175,7 +169,9 @@
     <string name="check_answer">Check Answer</string>
     <string name="enter_the_word">Enter the word</string>
 
-    <!-- Word Search Activity Strings -->
+    <string name="word_search_title">Word Search</string>
+    <string name="search_button">Search</string>
+    <string name="search_prompt">Search for a word to see its definition</string>
     <string name="please_enter_word_to_search">Please enter a word to search</string>
     <string name="word_not_found">Word not found</string>
     <string name="network_error_try_again">Network error. Please try again.</string>
@@ -191,25 +187,7 @@
     <string name="remove_word">Remove Word</string>
     <string name="save_word">Save Word</string>
     <string name="error_format">Error: %1$s</string>
-    <!-- Example label for flashcard -->
-    <string name="example">Example</string>
 
-    <!-- FlashcardFragment string resources -->
-    <string name="english_word_with_name">English word: %1$s</string>
-    <string name="definition_with_content">Definition: %1$s</string>
-    <string name="example_sentence_with_content">Example: %1$s</string>
-    <string name="pronunciation_with_content">Pronunciation: %1$s</string>
-
-    <!-- FlashcardFragment required strings -->
-    <string name="audio_not_available">Audio not available for %1$s</string>
-    <string name="play_pronunciation_for">Play pronunciation for %1$s</string>
-    <string name="part_of_speech_with_content">Part of speech: %1$s</string>
-    <!-- TestFlashcardFragment required strings -->
-    <string name="check_learned_result_incorrect">Incorrect! Try again.</string>
-    <string name="check_learned_result_correct">Correct! Well done.</string>
-    <string name="definition_not_available">Definition not available.</string>
-
-    <!-- VocabularyByTypeActivity strings -->
     <string name="default_words_title">Words</string>
     <string name="lets_start_learning">Let\'s start learning!</string>
     <string name="practice_lessons_to_build_vocabulary">Practice lessons to build your vocabulary</string>
@@ -227,23 +205,18 @@
     <string name="no_words_found">No words found</string>
     <string name="word_you_are_searching_for_not_in_saved_list">The word you are searching for is not in your saved list</string>
 
-    <!-- Activity Lessons strings -->
     <string name="ongoing">Ongoing</string>
     <string name="completed">Completed</string>
-    
-    <!-- Hard-coded strings that need to be moved to resources -->
+
     <string name="sample_word_as_many_as">as many as</string>
     <string name="sample_lesson_count">Lesson: 3</string>
     <string name="sample_advanced_count">Advanced: 76</string>
     <string name="sample_progress_count">6/10</string>
     <string name="sample_lesson_count_five">5 lessons</string>
-    <string name="word_search_title">Word Search</string>
-    <string name="search_button">Search</string>
     <string name="sample_word_example">example</string>
     <string name="sample_phonetic">/ɪɡˈzæm.pəl/</string>
     <string name="sample_part_of_speech">noun</string>
     <string name="sample_definition">a thing characteristic of its kind or illustrating a general rule</string>
-    <string name="search_prompt">Search for a word to see its definition</string>
     <string name="please_try_different_word">Please try a different word</string>
     <string name="lesson_details_title">Lesson Details</string>
     <string name="vocabulary_label">Vocabulary</string>

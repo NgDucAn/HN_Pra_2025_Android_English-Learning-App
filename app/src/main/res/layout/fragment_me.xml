@@ -326,7 +326,7 @@
                         android:layout_width="@dimen/dp_24"
                         android:layout_height="@dimen/dp_24"
                         android:layout_gravity="center"
-                        android:background="@drawable/bg_circle_blue" />
+                        android:background="@drawable/bg_circle_gray" />
                 </FrameLayout>
 
                 <FrameLayout
@@ -371,7 +371,7 @@
                         android:layout_width="@dimen/dp_24"
                         android:layout_height="@dimen/dp_24"
                         android:layout_gravity="center"
-                        android:background="@drawable/bg_circle_blue" />
+                        android:background="@drawable/bg_circle_gray" />
                 </FrameLayout>
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -415,7 +415,6 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:textSize="@dimen/sp_12"
-                    android:textStyle="bold"
                     android:text="@string/weekday_thu"
                     android:fontFamily="@font/nunito_medium"/>
 
@@ -443,7 +442,6 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:textSize="@dimen/sp_12"
-                    android:textStyle="bold"
                     android:text="@string/weekday_sun"
                     android:fontFamily="@font/nunito_medium"/>
             </LinearLayout>
