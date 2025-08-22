@@ -9,34 +9,48 @@ import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sun.englishlearning.R
-import com.sun.englishlearning.databinding.ActivityLessonsBinding
 import com.sun.englishlearning.data.model.Lesson
+import com.sun.englishlearning.data.repository.LessonRepositoryImpl
+import com.sun.englishlearning.data.repository.UserLessonProgressRepositoryImpl
+import com.sun.englishlearning.databinding.FragmentLessonsBinding
 import com.sun.englishlearning.screen.courses.adapter.CoursesAdapter
 import com.sun.englishlearning.utils.base.BaseFragment
 
-class CoursesFragment : BaseFragment<ActivityLessonsBinding>(), CoursesContract.View {
+class CoursesFragment :
+    BaseFragment<FragmentLessonsBinding>(),
+    CoursesContract.View {
 
     private lateinit var coursesAdapter: CoursesAdapter
-    private lateinit var presenter: CoursesContract.Presenter
+    private lateinit var presenter: CoursesPresenter
     private var isOngoingTabSelected = true
 
     override val isInsets = true
 
-    override fun inflateViewBinding(inflater: LayoutInflater, container: ViewGroup?): ActivityLessonsBinding {
-        return ActivityLessonsBinding.inflate(inflater, container, false)
+    override fun inflateViewBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentLessonsBinding {
+        return FragmentLessonsBinding.inflate(inflater, container, false)
     }
 
     override fun initView() {
+        presenter = CoursesPresenter(
+            LessonRepositoryImpl(
+                requireContext(),
+                UserLessonProgressRepositoryImpl()
+            )
+        )
+        presenter.setContext(requireContext())
         setupRecyclerView()
         setupTabs()
-        setupBackButton()
     }
 
     override fun initData() {
-        presenter = CoursesPresenter()
-        (presenter as CoursesPresenter).setContext(requireContext())
         presenter.attachView(this)
         presenter.onTabSelected(isOngoingTabSelected)
+        // Load initial lessons based on the selected tab
+        if (isOngoingTabSelected) {
+            presenter.loadOngoingLessons()
+        } else {
+            presenter.loadCompletedLessons()
+        }
     }
 
     override fun onStart() {
@@ -58,8 +72,8 @@ class CoursesFragment : BaseFragment<ActivityLessonsBinding>(), CoursesContract.
     }
 
     override fun onDestroyView() {
-        presenter.detachView()
         super.onDestroyView()
+        presenter.detachView()
     }
 
     private fun setupRecyclerView() {
@@ -86,12 +100,6 @@ class CoursesFragment : BaseFragment<ActivityLessonsBinding>(), CoursesContract.
         }
     }
 
-    private fun setupBackButton() {
-        viewBinding.btnBack.setOnClickListener {
-            findNavController().navigateUp()
-        }
-    }
-
     private fun selectTab(isOngoing: Boolean) {
         isOngoingTabSelected = isOngoing
 
@@ -110,34 +118,8 @@ class CoursesFragment : BaseFragment<ActivityLessonsBinding>(), CoursesContract.
         }
     }
 
-    override fun showLoading() {
-        // Show loading indicator
-    }
-
-    override fun hideLoading() {
-        // Hide loading indicator
-    }
-
-    override fun showOngoingLessons(lessons: List<Lesson>) {
-        coursesAdapter.updateLessons(lessons)
-
-        // Show empty state message if no lessons
-        if (lessons.isEmpty()) {
-            Toast.makeText(requireContext(), "No ongoing lessons available", Toast.LENGTH_SHORT).show()
-        }
-    }
-
-    override fun showCompletedLessons(lessons: List<Lesson>) {
-        coursesAdapter.updateLessons(lessons)
-
-        // Show empty state message for completed lessons
-        if (lessons.isEmpty()) {
-            Toast.makeText(requireContext(), "No completed lessons yet. Start learning to see progress!", Toast.LENGTH_SHORT).show()
-        }
-    }
-    
     // Showing lessons with progress
-    fun showOngoingLessonsWithProgress(lessons: List<Lesson>, progressMap: Map<String, Int>, wordsLearnedMap: Map<String, Int>) {
+    override fun showOngoingLessons(lessons: List<Lesson>, progressMap: Map<String, Int>, wordsLearnedMap: Map<String, Int>) {
         coursesAdapter.updateLessonsWithProgress(lessons, progressMap, wordsLearnedMap)
 
         // Show empty state message if no lessons
@@ -146,22 +128,13 @@ class CoursesFragment : BaseFragment<ActivityLessonsBinding>(), CoursesContract.
         }
     }
 
-    fun showCompletedLessonsWithProgress(lessons: List<Lesson>, progressMap: Map<String, Int>, wordsLearnedMap: Map<String, Int>) {
+    override fun showCompletedLessons(lessons: List<Lesson>, progressMap: Map<String, Int>, wordsLearnedMap: Map<String, Int>) {
         coursesAdapter.updateLessonsWithProgress(lessons, progressMap, wordsLearnedMap)
 
         // Show empty state message for completed lessons
         if (lessons.isEmpty()) {
             Toast.makeText(requireContext(), "No completed lessons yet. Start learning to see progress!", Toast.LENGTH_SHORT).show()
         }
-    }
-
-    // Override methods for backward compatibility
-    override fun showOngoingLessonsWithProgress(lessons: List<Lesson>, progressMap: Map<String, Int>) {
-        showOngoingLessonsWithProgress(lessons, progressMap, emptyMap())
-    }
-
-    override fun showCompletedLessonsWithProgress(lessons: List<Lesson>, progressMap: Map<String, Int>) {
-        showCompletedLessonsWithProgress(lessons, progressMap, emptyMap())
     }
 
     override fun showError(message: String) {
