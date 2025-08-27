@@ -14,7 +14,8 @@ class SavedWordsAdapter(
 
     enum class Action {
         PLAY_SOUND,
-        REMOVE_WORD
+        REMOVE_WORD,
+        VIEW_DETAILS
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SavedWordViewHolder {
@@ -32,13 +33,17 @@ class SavedWordsAdapter(
 
     override fun getItemCount(): Int = savedWords.size
 
-    inner class SavedWordViewHolder(private val binding: ItemSavedWordBinding) : 
+    inner class SavedWordViewHolder(internal val binding: ItemSavedWordBinding) : 
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(savedWord: SavedWord) {
             binding.apply {
                 tvWord.text = savedWord.word
                 tvDefinition.text = savedWord.definition
+                
+                root.setOnClickListener {
+                    onAction(savedWord, Action.VIEW_DETAILS)
+                }
                 
                 ivSound.setOnClickListener {
                     onAction(savedWord, Action.PLAY_SOUND)
