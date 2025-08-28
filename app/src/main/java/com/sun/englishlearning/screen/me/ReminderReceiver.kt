@@ -7,6 +7,9 @@ import android.content.Intent
 import androidx.core.app.NotificationCompat
 import com.sun.englishlearning.MainActivity
 import com.sun.englishlearning.R
+import com.google.firebase.auth.FirebaseAuth
+import com.sun.englishlearning.data.repository.UserLessonProgressRepositoryImpl
+import kotlinx.coroutines.runBlocking
 
 class ReminderReceiver : BroadcastReceiver() {
     
@@ -38,9 +41,34 @@ class ReminderReceiver : BroadcastReceiver() {
                     .build()
             }
             else -> {
+                // Enrich daily reminder with recent course and words learned
+                val enrichedContent: String = runBlocking {
+                    val user = FirebaseAuth.getInstance().currentUser
+                    if (user == null) {
+                        "Don't forget to practice your English today. Tap to open the app."
+                    } else {
+                        try {
+                            val repo = UserLessonProgressRepositoryImpl()
+                            val progressListResult = repo.getUserProgressByUser(user.uid)
+                            val progressList = progressListResult.getOrNull()
+                            val latest = progressList?.firstOrNull()
+                            if (latest != null) {
+                                val courseLabel = latest.lessonId.ifBlank { "recent course" }
+                                val learned = latest.wordsLearned
+                                val total = latest.totalWords
+                                "Khóa gần nhất: " + courseLabel + " — " + learned + "/" + total + " từ đã học"
+                            } else {
+                                "Don't forget to practice your English today. Tap to open the app."
+                            }
+                        } catch (e: Exception) {
+                            "Don't forget to practice your English today. Tap to open the app."
+                        }
+                    }
+                }
+
                 NotificationCompat.Builder(context, NotificationsFragment.CHANNEL_ID)
                     .setContentTitle("Daily Learning Reminder")
-                    .setContentText("Don't forget to practice your English today. Tap to open the app.")
+                    .setContentText(enrichedContent)
                     .setSmallIcon(R.drawable.ic_book)
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                     .setContentIntent(pendingIntent)
